@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Format Control</title>
+    <style>
+        #dummyText {
+            border-style: solid;
+            border-width: 2px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>CSS Manipulator</h2>
+    <p id="dummyText">This is a paragraph of dummy text.</p>
+    
+    <h3>Text Color</h3>
+    R: <input type="text" id="textColorR" size="3"> 
+    G: <input type="text" id="textColorG" size="3"> 
+    B: <input type="text" id="textColorB" size="3"><br>
+
+    <h3>Border Color</h3>
+    R: <input type="text" id="borderColorR" size="3"> 
+    G: <input type="text" id="borderColorG" size="3"> 
+    B: <input type="text" id="borderColorB" size="3"><br>
+
+    <h3>Border Width</h3>
+    Width (px): <input type="text" id="borderWidth" size="3"><br><br>
+
+    <button onclick="updateCSS()">Update CSS</button>
+
+    <script>
+        function updateCSS() {
+            var tr = document.getElementById('textColorR').value;
+            var tg = document.getElementById('textColorG').value;
+            var tb = document.getElementById('textColorB').value;
+            
+            var br = document.getElementById('borderColorR').value;
+            var bg = document.getElementById('borderColorG').value;
+            var bb = document.getElementById('borderColorB').value;
+            
+            var width = document.getElementById('borderWidth').value;
+            var p = document.getElementById('dummyText');
+
+            p.style.color = 'rgb(' + tr + ',' + tg + ',' + tb + ')';
+            p.style.borderColor = 'rgb(' + br + ',' + bg + ',' + bb + ')';
+            p.style.borderWidth = width + 'px';
+        }
+    </script>
+</body>
+</html>
